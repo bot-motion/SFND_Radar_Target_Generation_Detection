@@ -3,7 +3,7 @@
 
 ## 2D CFAR Implementation
 
-1- Determine the number of training cells and guard cells for each dimension.
+### 1 Determine the number of training cells and guard cells for each dimension.
 
 The number of training cells should be decided based on the environment. Since there is only a single simulated target, 
 when in doubt more training cells should be used to estimate noise, as the target reflects into a lot of cells.
@@ -23,11 +23,12 @@ Gd = 7;         %Number of guard cells for doppler
 
 ```
 
-2- Determine the threshold offset by SNR value in db
+### 2 Determine the threshold offset by SNR value in db
 
 ` offset = 12; `
 
-3- Slide the cell under test across the complete matrix.
+3 Slide the cell under test across the complete matrix.
+###
 
 We define a `noise_level` vector to store the average noise across the training cells, compute the `threshold` and
 check if the cell under test is below or above threshold.
@@ -62,7 +63,8 @@ end
 
 ```
   
-4- Correct the values at the edges of matrix
+### 4 Correct the values at the edges of matrix
+
 
 ```
 for i = 1 : Nr/2
@@ -75,7 +77,7 @@ end
 
 ```
 
-### Result figures
+## Result figures
 
  ![](range_from_first_fft.png)
  
